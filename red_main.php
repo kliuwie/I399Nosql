@@ -26,6 +26,25 @@
 		<input type='checkbox' name='core' value='Yes'/> Core <br/>
 	<input type='submit' name='submit' value="Display Courses">
 </form>
+<h2>Q4.Drop down of courses to Display Comment </h2>
+	<form action='Q4.php' method='get'>
+	<select name='course'>
+<?php
+include "Predis/Autoloader.php";
+	Predis\Autoloader::register();
+	$redis = new Predis\Client(array(
+        "scheme" => "tcp",
+        "host" => "burrow.sice.indiana.edu",
+        "port" => 19617));
+	if (!$redis) {
+	die("Failed to connect to Redis");
+	}
+	$values = $redis->smembers('all_course');
+    	foreach ($values as $value) {echo nl2br("<option  value='".$value."'>".$value.'</option>');};
+?>
+	</select>
+	<input type='submit' name='submit' value="Display Courses">
+</form>
 
 </body>
 </html>
