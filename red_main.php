@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<h1>Group Project - Redis Explorationt</h2><br>
+	<h1>Group Project - Redis Exploration</h2><br>
 	<h2>Q1.Drop down of Groups </h2>
 	<form action='Q1.php' method='post'>
 	<select name='course'>
@@ -26,6 +26,25 @@
 		<input type='checkbox' name='core' value='Yes'/> Core <br/>
 	<input type='submit' name='submit' value="Display Courses">
 </form>
+
+
+<h2>Q3.Professor attributes and courses </h2>
+	<form action='Q3.php' method='post'>
+	Please select the professor from the drop down <br/>
+	<select name='prof'>
+		<option value = 'Alex'> Professor Alex </option>
+		<option value = 'Beta'> Professor Beta </option>
+		<option value = 'Dax'> Professor Dax </option>
+		<option value = 'Gary'> Professor Gary </option>
+		<option value = 'Rack'> Professor Rack </option>
+	</select>
+	<br/>
+</br>
+		<input type='checkbox' name= 'attribute' value='yes'/> See Attributes <br/>
+		<input type='checkbox' name= 'course' value='yes'/> See Courses <br/>
+	<input type='submit' name='submit' value="Display Informations">
+</form>
+
 <h2>Q4.Drop down of courses to Display Comment </h2>
 	<form action='Q4.php' method='get'>
 	<select name='course'>
