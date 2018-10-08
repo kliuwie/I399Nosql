@@ -65,5 +65,16 @@ include "Predis/Autoloader.php";
 	<input type='submit' name='submit' value="Display Courses">
 </form>
 
+<h2>Q5.Choose a professor and vote them as your favorite</h2>
+	<form action='Q5.php' method='get'>
+	Please select the professor from the drop down <br/>
+	<select name='prof1'>
+	<?php
+
+	$values = $redis->zRange('all_prof', 0, -1);
+		foreach ($values as $value) {echo nl2br("<option  value='".$value."'>".$value.'</option>');};
+	?>
+	</select>
+	<input type='submit' name='fav' value="vote" >
 </body>
 </html>
